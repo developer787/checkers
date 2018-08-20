@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Keypad from '../keypad'
+import Winner from '../winnerBoard'
 
 
 
@@ -22,9 +23,9 @@ class Game extends Component {
 		return (
 			<div className="gameboard">
 			 
-			
+		
 		      <Keypad />
-		     
+		     	<Winner />
 			</div>
 		)
 	}

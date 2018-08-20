@@ -7,6 +7,7 @@ export const hardreset = () => ({ type: 'HARD_RESET' })
 export const savescore = () => ({ type: 'SAVE_SCORE' })
 export const showScores = () => ({ type: 'SHOW_SCORES' })
 export const hideScores = () => ({ type: 'HIDE_SCORES' })
+export const resetGame = () => ({ type: 'RESET_GAME' })
 
 
 

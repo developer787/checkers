@@ -11,8 +11,10 @@ const initialState = {
 	status: "grid-item",
 	turn: "playerOne",
 	selected: false,
-	activeSquare: 0
-	
+	activeSquare: 0,
+	winner: "",
+	redScore: 0,
+	blackScore: 0
 }
 export default (state=initialState, action)=> {
 	const update = (
@@ -25,14 +27,12 @@ export default (state=initialState, action)=> {
 			    hidden: "buttonGrid hide"
 			})
 		case 'RESET_GAME':
-			return update(state, {
-			    hidden: "buttonGrid"
-			})
+			return initialState
 		case 'PLAYER_ONE_MOVE':
 			return update(state, {
 			[action.payload.row]:  action.payload.column,
-			
-			turn: "playerTwo"
+			activeSquare: action.payload.activeSquare,
+			turn: action.payload.turn
 			})
 		case 'PLAYER_ONE_DELETE':
 			return update(state, {
@@ -48,6 +48,14 @@ export default (state=initialState, action)=> {
 			return update(state, {
 		      status: "grid-item-status-active"
 			})
+		case 'RED_SCORE':
+			return update(state, {
+		      redScore: action.payload.redScore
+			})
+		case 'BLACK_SCORE':
+			return update(state, {
+		      blackScore: action.payload.blackScore
+			})
 		case 'PIECE_SELECTED':
 			return update(state, {
 		      selected: true,
@@ -60,6 +68,10 @@ export default (state=initialState, action)=> {
 		case 'ACTIVE_CHIP':
 			return update(state, {
 		      activeSquare: action.payload
+		})
+		case 'DECLARE_WINNER':
+			return update(state, {
+		      winner: action.payload
 		})
 		case 'VALID_MOVE':
 			return update(state, {

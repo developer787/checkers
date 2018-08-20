@@ -1,17 +1,13 @@
 .gameWrapper {
-	height: 100%;
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: column;
+	
+
 }
 .gameboard {
 	background-color: #697;
-	height: 100%;
+	
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: column;
 }
-.soundmixer {
-	display: none;
-}
+
 

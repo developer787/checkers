@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import buttons from './buttons'
-import { sendValue } from '../store/actions'
 import { movePiece, pieceActive } from '../store/actions'
 import './keypad.css'
 
@@ -25,18 +23,6 @@ const mapDispatchToProps = (dispatch)  => ({
 		pieceActive: (val) => dispatch(pieceActive(val))
 });
 
-// const getRandomIntInclusive = (min, max) => {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-// }
-// const buttonArray1 = [0,0,0]
-// const btnArray1 = buttonArray1.map(
-// 	()=>getRandomIntInclusive(1, 9))
-// const buttonArray2 = [0,0,0].map(
-// 	()=>getRandomIntInclusive(1, 9))
-// const buttonArray3 = [0,0,0].map(
-// 	()=>getRandomIntInclusive(1, 9))
 let count = 1;
 class Grid extends Component {
     constructor(props){
@@ -49,32 +35,13 @@ class Grid extends Component {
     }
     checkStatus(event, i){
     	this.props.pieceActive(event)
-    	/*const square = ReactDOM.findDOMNode(event.target).parentNode
-    	const chip = event.target
-    	console.log(event.target,"-->>", chip, "<<--", square.getAttribute("data"))
-    	if(this.props.selected && square.getAttribute("data") === this.props.activeSquare) {
-    		console.log("SAME")
-    		square.classList.remove('active');
-    		chip.classList.remove('active');
-    	} else {
-    	if (square.classList.contains('active')) {
-			square.classList.remove('active');
-		} else {
-			square.classList.add('active');
-		}
-		if (!chip.classList.contains('active') && ) {
-			chip.classList.add('active')
-			this.props.pieceActive(square.getAttribute("data"))
-		} else {
-			chip.classList.remove('active');
-		}
-    	}*/
+   
 
     }
 	render(){
 		count = 1;
 		const { 
-			keypad,
+			
 			firstRow,
 			secondRow,
 			thirdRow,
@@ -83,8 +50,7 @@ class Grid extends Component {
 			sixthRow,
 			seventhRow,
 			eigthRow,
-			btnArray2,
-			btnArray3
+		
 		} = this.props
 		return(
 			<div className={"buttonGrid"}>
@@ -112,18 +78,18 @@ export default buttonGrid
 const row = (row, movePiece, props)=>row.map((e,i)=>{
 	
 	if(e == 2){
-		return (<div data={count} onClickCapture={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{redChip(movePiece, "", i)}</div>)
+		return (<div data={count} onClick={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{redChip(movePiece, "", i)}</div>)
 	} else if(e == 1){
 		
-		return (<div data={count} onClickCapture={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{blackChip(movePiece, "", i)}</div>)
+		return (<div data={count} onClick={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{blackChip(movePiece, "", i)}</div>)
 	} else if(e == 4){
-		return (<div data={count} onClickCapture={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{blackChip(movePiece, "♔", i)}</div>)
+		return (<div data={count} onClick={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{blackChip(movePiece, "♔", i)}</div>)
 	} else if(e == 3) {
-		return (<div data={count} onClickCapture={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{redChip(movePiece,"♔", i)}</div>)
+		return (<div data={count} onClick={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{redChip(movePiece,"♔", i)}</div>)
 	} else {
-		return (<div data={count} onClickCapture={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{/*greenChip(movePiece,"", i)*/}</div>)
+		return (<div data={count} onClick={(event)=>props.checkStatus(event,i)} id={"square"+count++} key={i} className={props.props.status}>{/*greenChip(movePiece,"", i)*/}</div>)
 	}
 	})
-const redChip = (movePiece, k, i)=>(<div onClick={(e)=>movePiece(e,i)} className="red-chip">{k}</div>)
-const blackChip = (movePiece, k, i)=>(<div onClick={(e)=>movePiece(e,i)} className="black-chip">{k}</div>)
+const redChip = (movePiece, k, i)=>(<div className="red-chip">{k}</div>)
+const blackChip = (movePiece, k, i)=>(<div className="black-chip">{k}</div>)
 //const greenChip = (movePiece, k, i)=>(<div onClick={(e)=>movePiece(e,i)} className="green-chip">{k}</div>)
