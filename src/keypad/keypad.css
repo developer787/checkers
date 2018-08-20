@@ -1,0 +1,126 @@
+.buttonGrid {
+	text-align: center;
+    margin-top: auto;
+    margin: 0 auto;
+    border: none;
+    margin-top: 20px;
+    
+}
+
+.buttonGrid .grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    
+    background-color: #21ccF3;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    
+}
+.buttonGrid .grid-container .grid-item {
+    
+    padding: 4px;
+}
+
+.buttonGrid .grid-container .grid-item:nth-child(-2n+8) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+.buttonGrid .grid-container div:nth-child(8) ~ div:nth-child(odd) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+
+.buttonGrid .grid-container div:nth-child(16) ~ div:nth-child(even) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+.buttonGrid .grid-container div:nth-child(16) ~ div:nth-child(odd) {
+    background-color: rgba(255, 255, 255);
+}
+.buttonGrid .grid-container div:nth-child(24) ~ div:nth-child(odd) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+.buttonGrid .grid-container div:nth-child(24) ~ div:nth-child(even) {
+    background-color: rgba(255, 255, 255);
+}
+.buttonGrid .grid-container div:nth-child(32) ~ div:nth-child(even) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+.buttonGrid .grid-container div:nth-child(32) ~ div:nth-child(odd) {
+    background-color: rgba(255, 255, 255);
+}
+.buttonGrid .grid-container div:nth-child(40) ~ div:nth-child(odd) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+.buttonGrid .grid-container div:nth-child(40) ~ div:nth-child(even) {
+    background-color: rgba(255, 255, 255);
+}
+.buttonGrid .grid-container div:nth-child(48) ~ div:nth-child(even) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+.buttonGrid .grid-container div:nth-child(48) ~ div:nth-child(odd) {
+    background-color: rgba(255, 255, 255);
+}
+.buttonGrid .grid-container div:nth-child(56) ~ div:nth-child(odd) {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+.buttonGrid .grid-container div:nth-child(56) ~ div:nth-child(even) {
+    background-color: rgba(255, 255, 255);
+}
+.red-chip {
+	background-color: red;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	color: white;
+	
+	
+
+}
+.black-chip {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+    color: white;
+    
+   
+}
+.green-chip {
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+    color: white;
+    
+   
+}
+
+
+.buttonGrid .grid-item {
+  background-color: rgba(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.buttonGrid .grid-container .active div {
+  background-color: #f0fa23;
+  border: 1px solid #555510;
+  text-align: center;
+}
+.buttonGrid .grid-item-status-valid {
+  background-color: rgb(0, 255, 100);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+
+.hide {
+	display: none;
+}
+.red-chip .active{
+  background-color: #f0fa23;
+  border: 1px solid #555510;
+  text-align: center;
+}
+
